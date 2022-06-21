@@ -28,3 +28,438 @@ b.	Printing prime number between a given range
 12.	Illustrate a Simple inheritance Using super to Call Super class Constructors
 13.	Illustrate use of Interfaces
 14.	Illustrate use of Packages
+
+___
+
+## Answer
+
+1. WAP “Hello World” Java 
+
+```java
+public class Qone { // Class name
+      public static void main(String[] args) { // Main method
+            System.out.println("Hello World"); // Printing the "Hello World"
+      }
+}
+```
+
+![1.png](images/1.png)
+
+1. WAP and explain the program for
+    1. Prime Number Verification
+    2. Printing prime number between a given range
+    
+    ```java
+    import java.util.Scanner;
+    
+    public class Qtwo {
+    
+          Scanner scn = new Scanner(System.in);
+    
+          public static void main(String[] args) {
+                Qtwo qtwo = new Qtwo();
+                qtwo.choose();
+    
+          }
+    
+    			// method for choosing between two choice
+          public void choose() {
+                System.out.println("Menu");
+                System.out.println("1. To verify prime number");
+                System.out.println("2. To find prime number between a given range");
+                System.out.print("\nEnter your choice: ");
+                int choice = scn.nextInt();
+                switch (choice) {
+                      case 1:
+                            primeNumberVerification();
+                            break;
+                      case 2:
+                            primeNumberBetweenRange();
+                            break;
+                      default:
+                            System.out.println("Invalid choice");
+                            break;
+                }
+          }
+    
+          // method to verify prime number
+          public void primeNumberVerification() {
+                System.out.print("Enter a number to verify prime number: ");
+                int num = scn.nextInt();
+                int flag = 0;
+                for (int i = 2; i < num; i++) {
+                      if (num % i == 0) {
+                            flag = 1;
+                            break;
+                      }
+                }
+                if (flag == 0) {
+                      System.out.println(num + " is a prime Number");
+                } else {
+                      System.out.println(num + " is not a prime Number");
+                }
+          }
+    
+          // method to print prime number between a given range
+          public void primeNumberBetweenRange() {
+                System.out.print("Enter the starting number: ");
+                int start = scn.nextInt();
+                System.out.print("Enter the ending number: ");
+                int end = scn.nextInt();
+                System.out.println("Prime Numbers between " + start + " and " + end + " are: ");
+                for (int i = start; i <= end; i++) {
+                      int flag = 0;
+                      for (int j = 2; j < i; j++) {
+                            if (i % j == 0) {
+                                  flag = 1;
+                                  break;
+                            }
+                      }
+                      if (flag == 0) {
+    
+                            System.out.print(i + ", ");
+                      }
+                }
+          }
+    
+    }
+    ```
+    
+
+![2.png](images/2.png)
+
+1. Illustrate use of classes and objects
+
+```java
+public class Qthree {
+
+      public static void main(String[] args) {
+            Animal a1 = new Animal(); // creating an object of Animal class
+            a1.eat();
+
+      }
+}
+
+// Animal class
+class Animal {
+
+      public void eat() {
+            System.out.println("Animal is eating");
+      }
+
+}
+```
+
+![3.png](images/3.png)
+
+1. Illustrate use of constructors
+
+```java
+public class Qfour {
+
+      public static void main(String[] args) {
+            Animal a1 = new Animal(); // creating an object of Animal class
+            Animal a2 = new Animal("Lion", "Golden");
+            a1.eat();
+            a2.info();
+      }
+}
+
+class Animal {
+
+      private String name;
+      private String color;
+
+      Animal() {
+            System.out.println("Animal is created");
+      }
+
+      Animal(String name, String color) {
+            this.name = name;
+            this.color = color;
+      }
+
+      public void info() {
+            System.out.println("Animal's name is " + name + " and color is " + color);
+      }
+
+      public void eat() {
+            System.out.println("Animal is eating");
+      }
+}
+```
+
+![4.png](images/4.png)
+
+1. Illustrate use of command line arguments
+
+```java
+public class Qfive {
+
+      public static void main(String[] args) {
+            // command line arguments
+            System.out.println("Your first argument is: " + args[0]);
+      }
+}
+```
+
+![5.png](images/5.png)
+
+1. Illustrate use of Stream classes to take user’s input
+
+```java
+import java.io.BufferedReader; //
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+// 6.	Illustrate use of Stream classes to take user’s input 
+public class Qsix {
+      public static void main(String[] args) {
+            String text;
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Enter the text: ");
+            try {
+                  text = br.readLine();
+                  System.out.println("You entered: " + text);
+            } catch (IOException e) {
+                  System.out.println(e.getLocalizedMessage());
+            }
+      }
+}
+```
+
+![6.png](images/6.png)
+
+1. Illustrate use of Overriding
+
+```java
+class Vehicle {
+      void run() {
+            System.out.println("Vehicle is running");
+      }
+}
+
+public class Qseven extends Vehicle {
+
+      @Override
+      void run() {
+            super.run();
+            System.out.println("Vehicle is running slowly");
+      }
+
+      public static void main(String[] args) {
+            Qseven v = new Qseven();
+            v.run();
+      }
+}
+```
+
+![7.png](images/7.png)
+
+1. Creates a super class called Figure. Its defines a method called area( ) that computes the area of an object. The program derives two subclasses from Figure. The first is Rectangle and the second is Triangle. Each of these subclasses overrides area( ) so that it returns
+
+```java
+class Figure {
+      public double area(double l, double b) {
+            return l * l * b * b;
+      }
+}
+
+class Rectangle extends Figure {
+      @Override
+      public double area(double l, double b) {
+            double ar = l * b;
+            return ar;
+      }
+}
+
+class Triangle extends Figure {
+      @Override
+      public double area(double l, double b) {
+            double ar = l * b / 2;
+            return ar;
+      }
+}
+
+public class Qeight {
+
+      public static void main(String[] args) {
+            Rectangle r = new Rectangle();
+            Triangle t = new Triangle();
+            System.out.println("Area of Rectangle is: " + r.area(5, 6));
+            System.out.println("Area of Triangle is: " + t.area(5, 6));
+      }
+}
+```
+
+![8.png](images/8.png)
+
+1. Create the Abstract class and implements the method
+
+```java
+abstract class Animal {
+      abstract void run(); // abstract method
+
+      void eat() {
+            System.out.println("Animal is eating");
+      }
+}
+
+class Mammal extends Animal { // abstract can be inherited
+      void run() {
+            System.out.println("running safely..");
+      }
+}
+
+public class Qnine {
+      public static void main(String[] args) {
+            Mammal m = new Mammal(); // abstract class can't be instantiated but can be inherited by concrete class
+            m.run();
+            m.eat();
+      }
+}
+```
+
+![9.png](images/9.png)
+
+1. Create a program illustrates the Overloading
+
+```java
+// Create a program illustrates the Overloading
+
+public class Qten {
+
+      public static void main(String[] args) {
+            System.out.println(add(10, 20));
+            System.out.println(add(10, 20, 30));
+            System.out.println(add(2.4, 7.6));
+      }
+
+      static int add(int a, int b) { // add method that takes two int and return an int
+            return a + b;
+      }
+
+      static int add(int a, int b, int c) { // add method that takes three int and return an int
+            return a + b + c;
+      }
+
+      static double add(double a, double b) { // add method that takes two double and return an double
+            return a + b;
+      }
+}
+```
+
+![10.png](images/10.png)
+
+1. Illustrate a simple inheritance.
+
+```java
+class TukTuk {
+      void run() {
+            System.out.println("Vehicle is running");
+      }
+}
+
+public class Qeleven extends TukTuk { // inheriting from above class called TukTuk
+
+      public static void main(String[] args) {
+            Qeleven v = new Qeleven();
+            v.run();
+      }
+}
+```
+
+![11.png](images/11.png)
+
+1. Illustrate a Simple inheritance Using super to Call Super class Constructors
+
+```java
+// Illustrate a Simple inheritance Using super to Call Super class Constructors
+
+class Vehicle {
+
+      Vehicle() {
+            System.out.println("Vehicle is created");
+      }
+
+      void run() {
+            System.out.println("Vehicle is running");
+      }
+
+}
+
+public class Qtwelve extends Vehicle {
+
+      public Qtwelve() {
+            super(); // super is use to call super class constructor
+            System.out.println("Vehicle is starting");
+      }
+
+      public static void main(String[] args) {
+            Qtwelve v = new Qtwelve();
+            v.run();
+      }
+
+}
+```
+
+![12.png](images/12.png)
+
+1. Illustrate use of Interfaces
+
+```java
+interface ISomething {
+      public void doSomething();
+}
+
+public class Qthirteen implements ISomething {
+
+      public void doSomething() {
+            System.out.println("Something is happening");
+      }
+
+      public static void main(String[] args) {
+            Qthirteen s = new Qthirteen();
+            s.doSomething();
+      }
+
+}
+```
+
+![13.png](images/13.png)
+
+1. Illustrate use of Packages
+
+```java
+// User-Created packages
+// create a folder called 'mypack'
+// inside that create TestPackage.java folder
+
+package mypack; // package name
+
+public class TestPackage {
+
+      public void msg() {
+            System.out.println("Hello");
+      }
+}
+
+// -----------------------------------------
+
+// use-case of the above package
+// in Qfourteen.java file
+
+import mypack.*;
+
+public class Qfourteen {
+
+      public static void main(String[] args) {
+
+            TestPackage t = new TestPackage();
+            t.msg();
+
+      }
+}
+```
+
+![14.png](images/14.png)

@@ -6,6 +6,8 @@ public class Qtwo {
       Scanner scn = new Scanner(System.in);
 
       public static void main(String[] args) {
+            System.out.println("Name: Abhishek Bhatta and CRN:019-312");
+            System.out.println("---------------------------------");
             Qtwo qtwo = new Qtwo();
             qtwo.choose();
 

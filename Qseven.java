@@ -15,6 +15,8 @@ public class Qseven extends Vehicle {
       }
 
       public static void main(String[] args) {
+            System.out.println("Name: Abhishek Bhatta and CRN:019-312");
+            System.out.println("---------------------------------");
             Qseven v = new Qseven();
             v.run();
       }

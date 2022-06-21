@@ -26,6 +26,8 @@ class Triangle extends Figure {
 public class Qeight {
 
       public static void main(String[] args) {
+            System.out.println("Name: Abhishek Bhatta and CRN:019-312");
+            System.out.println("---------------------------------");
             Rectangle r = new Rectangle();
             Triangle t = new Triangle();
             System.out.println("Area of Rectangle is: " + r.area(5, 6));

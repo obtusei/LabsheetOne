@@ -15,6 +15,8 @@ class Mammal extends Animal {
 
 public class Qnine {
       public static void main(String[] args) {
+            System.out.println("Name: Abhishek Bhatta and CRN:019-312");
+            System.out.println("---------------------------------");
             Mammal m = new Mammal(); // abstract class can be instantiated but can be inherited by concrete class
             m.run();
             m.eat();
