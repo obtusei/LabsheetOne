@@ -1,0 +1,30 @@
+# Java Labsheet One
+
+## Instruction
+1. The first line of the output should include your Name and CRN 
+2. Must include comments for every import line in your program in own words
+3. Program must have code optimization, identifier names should be meaningful with datatype prefix 
+4. Prepare the lab report in PDF format along with snapshots of output screen
+5. Upload all the source code (only .java files) of your solution along with your report
+
+___
+
+
+## Questions
+
+1.	WAP “Hello World” Java
+2.	WAP and explain the program for
+a.	Prime Number Verification
+b.	Printing prime number between a given range
+3.	Illustrate use of classes and objects
+4.	Illustrate use of constructors
+5.	Illustrate use of command line arguments
+6.	Illustrate use of Stream classes to take user’s input 
+7.	Illustrate use of Overriding
+8.	Creates a super class called Figure. Its defines a method called area( ) that computes the area of an object. The program derives two subclasses from Figure. The first is Rectangle and the second is Triangle. Each of these subclasses overrides area( ) so that it returns
+9.	Create the Abstract class and implements the method
+10.	Create a program illustrates the Overloading
+11.	Illustrate a simple inheritance.
+12.	Illustrate a Simple inheritance Using super to Call Super class Constructors
+13.	Illustrate use of Interfaces
+14.	Illustrate use of Packages
